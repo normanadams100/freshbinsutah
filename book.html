@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Bin Cleaning | Fresh Bins Utah</title>
+  <meta name="description" content="Book your trash can cleaning in Riverton, South Jordan, or Salem, UT. Pick a date, pay online, done. Fresh Bins Utah comes to your curb." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Page-specific overrides ── */
+    .book-hero {
+      background: #0b1922;
+      padding: 56px 0 48px;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .book-hero .hero-eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .book-hero h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--white);
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+    }
+
+    .book-hero p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.68);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .book-main {
+      padding: 48px 0 72px;
+    }
+
+    .book-layout {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      align-items: flex-start;
+    }
+
+    /* Square embed container */
+    .square-embed {
+      width: 100%;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      min-height: 480px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Shown until Square script loads */
+    .embed-placeholder {
+      padding: 48px 32px;
+      text-align: center;
+      color: var(--gray-mid);
+    }
+
+    .embed-placeholder .placeholder-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .embed-placeholder h2 {
+      font-size: 1.2rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .embed-placeholder p {
+      font-size: 0.92rem;
+      margin-bottom: 24px;
+    }
+
+    /* Book sidebar */
+    .book-sidebar {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .book-sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .book-sidebar-card h3 {
+      font-size: 0.95rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+
+    .book-sidebar-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .book-sidebar-card li {
+      font-size: 0.9rem;
+      color: var(--gray-mid);
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .book-sidebar-card li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .price-tag {
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .trust-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .trust-list li {
+      font-size: 0.9rem;
+      color: var(--gray-mid);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: none !important;
+      padding-bottom: 0 !important;
+      justify-content: flex-start !important;
+    }
+
+    .trust-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .need-help {
+      font-size: 0.88rem;
+      color: var(--gray-mid);
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .need-help a {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+
+    @media (min-width: 800px) {
+      .book-layout {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 40px;
+      }
+
+      .square-embed {
+        flex: 1.6;
+      }
+
+      .book-sidebar {
+        width: 260px;
+        flex-shrink: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimal nav — keep focus on booking -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Fresh Bins <span>Utah</span></a>
+      <a href="tel:+18019234666" class="btn btn-primary" style="padding:8px 18px;font-size:0.9rem;">Call (801) 923-4666</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <div class="book-hero">
+    <div class="container">
+      <div class="hero-eyebrow">Riverton &middot; South Jordan &middot; Salem, UT</div>
+      <h1>Book Your Bin Cleaning</h1>
+      <p>Pick your date, pay online, and we'll show up at your curb on trash day. You don't have to be home.</p>
+    </div>
+  </div>
+
+  <!-- Main booking area -->
+  <div class="book-main">
+    <div class="container">
+      <div class="book-layout">
+
+        <!-- Square booking widget loads here -->
+        <div class="square-embed" id="square-embed">
+          <div class="embed-placeholder" id="embed-placeholder">
+            <div class="placeholder-icon">📅</div>
+            <h2>Online Booking</h2>
+            <p>Select a service, pick a date, and pay securely. Takes about 2 minutes.</p>
+            <!--
+              SETUP INSTRUCTIONS:
+              1. Go to squareup.com > Appointments > Online Booking > Share
+              2. Copy your booking page URL
+              3. Option A (simplest): Replace the button href below with your URL
+              4. Option B (embedded): Paste the Square embed script tag here instead
+            -->
+            <a
+              href="https://book.squareup.com/appointments/oe6o2ag0kgokes/location/LTJT7YN12SFTW/services"
+              class="btn btn-primary btn-lg"
+              target="_blank"
+              rel="noopener"
+            >
+              Choose a Date &amp; Time &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="book-sidebar">
+          <div class="book-sidebar-card">
+            <h3>Services &amp; Pricing</h3>
+            <ul>
+              <li>
+                <span>One-Time Cleaning</span>
+                <span class="price-tag">$25/bin</span>
+              </li>
+              <li>
+                <span>Monthly Subscription</span>
+                <span class="price-tag">$15/bin</span>
+              </li>
+              <li>
+                <span>Driveway Rinse Add-On</span>
+                <span class="price-tag">$20</span>
+              </li>
+              <li>
+                <span>First-time discount</span>
+                <span class="price-tag" style="color:var(--green-dark);">-20%</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="book-sidebar-card">
+            <h3>What to Expect</h3>
+            <ul class="trust-list">
+              <li>We come to your curb on trash day</li>
+              <li>You don't have to be home</li>
+              <li>Done in about 10 minutes</li>
+              <li>Eco-friendly deodorizer</li>
+              <li>All wastewater captured</li>
+              <li>Text when we're done</li>
+            </ul>
+          </div>
+
+          <div class="book-sidebar-card">
+            <h3>Questions?</h3>
+            <p style="font-size:0.88rem;color:var(--gray-mid);margin-bottom:12px;">We respond same day.</p>
+            <a href="tel:+18019234666" class="btn btn-outline btn-full">Call (801) 923-4666</a>
+          </div>
+        </aside>
+
+      </div>
+
+      <p class="need-help">
+        Prefer a form? <a href="index.html#contact">Send us a message instead.</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-bottom" style="border-top:none;">
+      <div class="container" style="padding:24px 20px;">
+        <p style="color:rgba(255,255,255,0.45);font-size:0.82rem;text-align:center;">&copy; 2026 Fresh Bins Utah &mdash; Riverton, South Jordan &amp; Salem, UT</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
