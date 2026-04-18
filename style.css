@@ -293,6 +293,9 @@ h4 { font-size: 1rem; letter-spacing: 0.05em; }
   .nav-toggle { display: none; }
   .nav-links {
     position: static;
+    top: auto;
+    bottom: auto;
+    height: auto;
     transform: none;
     flex-direction: row;
     align-items: center;
